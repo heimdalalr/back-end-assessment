@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
+    <div class="wrapper row1">
+      <header id="header" class="clear">
+        <div id="hgroup">
+          <h1>Back End Assessment</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Text Link</a></li>
+            <li><a href="#">Text Link</a></li>
+            <li><a href="#">Text Link</a></li>
+            <li><a href="#">Text Link</a></li>
+            <li class="last"><a href="#">Text Link</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <div class="wrapper row2">
+      <div id="container" class="clear">
+        <!-- Slider -->
+        <section id="slider"><a href="#"><img src="images/demo/960x360.gif" alt=""></a></section>
+        <!-- main content -->
+        <div id="homepage">
+          <!-- Features -->
+          <section id="features" class="clear">
+            <article class="one_third">
+              <figure><img src="images/demo/290x180.gif" width="290" height="180" alt="">
+                <figcaption>
+                  <h2>Get a compliment</h2>
+                  <!-- compliment code -->
+                  <br />
+                  <div><button class="myButton" id="complimentButton" label="click for a compliment">Get a compliment</button></div><br />
+                  <!-- compliment code end -->
+                  <footer class="more">Positive Affirmations for your day.</footer>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="one_third">
+              <figure><img src="images/demo/290x180.gif" width="290" height="180" alt="">
+                <figcaption>
+                  <h2>Fortune Cookie</h2>
+                <!-- fortune code -->
+                <br />
+                <div><button class="myButton" id="fortuneCookie" label="click for today's fortune">Crack the Cookie</button></div><br />
+
+                  <!-- fortune code end -->
+                  <footer class="more"><a href="#">Read More &raquo;</a></footer>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="one_third lastbox">
+              <figure><img src="images/demo/290x180.gif" width="290" height="180" alt="">
+                <figcaption>
+                  <h2>Motivation Music</h2>
+                  <p>Some songs to lift mood and spirits.</p>
+                  <footer class="more"></footer>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="one_third">
+              <figure><img src="images/demo/290x180.gif" width="290" height="180" alt="">
+                <figcaption>
+                  <h2>Motivational Images</h2>
+                  <!-- motivational images code -->
+                  <br />
+                  <div><div id = "img-box">
+                    <!-- I will be populating this div with images from my unsplash api call-->
+                   </div id="img-box"></div><br />
+                  <!-- motivational image code end -->
+                  <footer class="more">Positive Affirmations for your day.</footer>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="one_third">
+              <figure><img src="images/demo/290x180.gif" width="290" height="180" alt="">
+                <figcaption>
+                  <h2>Guest book</h2>
+                <!-- guestbook code -->
+                <br />
+                <div></div><br />
+
+                  <!-- fortune code end -->
+                  <footer class="more">Thanks for visiting!</footer>
+                </figcaption>
+              </figure>
+            </article>
+            </article>
+          </section>
+    
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("complimentButton").onclick = function () {
+        axios.get("http://localhost:4000/api/compliment/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      document.getElementById("fortuneCookie").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+            }
+    </script>
+  </body>
+</html>
