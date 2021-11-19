@@ -40,10 +40,15 @@ app.get("/api/fortune", (req, res) => {
   
 });
 
- // Guess your age
+ // Guess your age by name input
  app.post('api/age', (req, res) => {
-  res.send("POST Request Called")
-})
+  res.send("POST Request Called");
+  let nameValue = req.body.name
+  let reply = axios.get(`https://api.agify.io?name=$nameValue}`)
+  if (reply === false){
+    res.send(reply)
+  }
+});
 
 app.get("/weather/:temperature", (req, res) => {
   const phrase = `<h3>It was ${req.params.temperature} today</h3>`;
