@@ -57,33 +57,33 @@ app.get("/weather/:temperature", (req, res) => {
 
 
 
-const divForImg = document.getElementById("img-box");
-const requestOne = "https://api.unsplash.com/search/photos?page=1&query=dogs&client_id=bkt400oyadcaDykv164wUfd6Ld6_xCKKxRZn7Ebkj0A";
+// const divForImg = document.getElementById("img-box");
+// const requestOne = "https://api.unsplash.com/search/photos?page=1&query=dogs&client_id=bkt400oyadcaDykv164wUfd6Ld6_xCKKxRZn7Ebkj0A";
 
-function makeRequestToUnsplash(requestUrl){
-  fetch(requestUrl)
-    .then( res => res.json())
-    .then((data) => {
-        data.results.forEach( (imageObj) =>{
-          createImage(imageObj);
-        });
-    });
-}
+// function makeRequestToUnsplash(requestUrl){
+//   fetch(requestUrl)
+//     .then( res => res.json())
+//     .then((data) => {
+//         data.results.forEach( (imageObj) =>{
+//           createImage(imageObj);
+//         });
+//     });
+// }
 
-function createImage(imageObj){
-  const imageDiv = document.createElement("div");
-  const image = document.createElement("img");
-  image.src = imageObj.urls.regular;
-  image.alt = imageObj.alt_description;
-  image.style.margin = "20px";
-  image.style.width = "300px";
-  image.style.height = "200px";
-  image.style.border = "double 4px black"
-  imageDiv.append(image);
-  divForImg.append(imageDiv);
-}
+// function createImage(imageObj){
+//   const imageDiv = document.createElement("div");
+//   const image = document.createElement("img");
+//   image.src = imageObj.urls.regular;
+//   image.alt = imageObj.alt_description;
+//   image.style.margin = "20px";
+//   image.style.width = "300px";
+//   image.style.height = "200px";
+//   image.style.border = "double 4px black"
+//   imageDiv.append(image);
+//   divForImg.append(imageDiv);
+// }
 
-makeRequestToUnsplash(requestOne);
+// makeRequestToUnsplash(requestOne);
 
 
 
